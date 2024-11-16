@@ -63,7 +63,7 @@ export default function Oeffnungszeiten() {
   return (
     <div className="w-full max-w-4xl mx-auto p-4">
       <h1 className="text-3xl font-bold mb-6 text-center">
-        Unsere Büro-Öffnungszeiten
+        Öffnungszeiten unseres Büros
       </h1>
       <div className="grid md:grid-cols-2 gap-6">
         {standorte.map((standort) => (

@@ -17,7 +17,7 @@ export default function KontaktdatenComponent() {
             passHref={true}
           >
             <div className="flex items-start mb-4">
-              <MapPin className="w-5 h-5 mt-3 mr-4 text-neutral-900 dark:text-neutral-50" />
+              <MapPin className="w-5 h-5 mt-3 mr-4 text-neutral-900" />
               <div>
                 <p className="font-semibold">Fahrschule Itzehoe:</p>
                 <p>Kamper Weg 170</p>
@@ -30,7 +30,7 @@ export default function KontaktdatenComponent() {
             passHref={true}
           >
             <div className="flex items-start">
-              <MapPin className="w-5 h-5 mt-3 mr-4 text-neutral-900 dark:text-neutral-50" />
+              <MapPin className="w-5 h-5 mt-3 mr-4 text-neutral-900" />
               <div>
                 <p className="font-semibold">Fahrschule Krempe:</p>
                 <p>Breite Straße 67</p>
@@ -40,14 +40,15 @@ export default function KontaktdatenComponent() {
           </Link>
         </div>
         <div className="flex items-center">
-          <Phone className="w-5 h-5 mr-4 text-neutral-900 dark:text-neutral-50" />
+          <Phone className="w-5 h-5 mr-4 text-neutral-900" />
           <div>
             <p className="font-semibold">Telefon:</p>
+            <p> Wolfgang Brückelmeier </p>
             <p>+49 1520 1983531</p>
           </div>
         </div>
         <div className="flex items-center">
-          <Mail className="w-5 h-5 mr-4 text-neutral-900 dark:text-neutral-50" />
+          <Mail className="w-5 h-5 mr-4 text-neutral-900" />
           <div>
             <p className="font-semibold">E-Mail:</p>
             <p>fahrschule-brueckelmeier@web.de</p>

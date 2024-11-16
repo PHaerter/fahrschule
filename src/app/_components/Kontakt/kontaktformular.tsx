@@ -154,7 +154,7 @@ export default function ContactForm() {
               <p className="text-sm text-gray-500">
                 Wir verwenden Ihre Angaben zur Beantwortung Ihrer Anfrage.
                 Weitere Informationen finden Sie in unseren{" "}
-                <Link href="/datenschutzhinweise" passHref legacyBehavior>
+                <Link href="/datenschutz" passHref legacyBehavior>
                   <a target="_blank" className="text-blue-500 hover:underline">
                     Datenschutzhinweisen
                   </a>
