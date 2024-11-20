@@ -143,7 +143,7 @@ export default function ContactForm() {
             />
             <CardFooter className="flex flex-col space-y-4">
               <button
-                className="w-full btn btn-primary text-white"
+                className="w-full btn btn-accent text-white"
                 type="submit"
                 disabled={isLoading}
               >

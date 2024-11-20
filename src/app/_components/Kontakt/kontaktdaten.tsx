@@ -59,6 +59,9 @@ export default function KontaktdatenComponent() {
             src="/WelleDrive-Logo.png"
             className="h-20"
             alt="WelleDrive Logo"
+            style={{
+              filter: "brightness(0%) contrast(100%) saturate(0)",
+            }}
           />
         </div>
       </CardContent>

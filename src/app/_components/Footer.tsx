@@ -50,7 +50,7 @@ export default function Footer(): JSX.Element {
     );
 
   return (
-    <footer className="w-full p-4 bg-neutral border-0 shadow md:flex md:items-center md:justify-between md:p-6">
+    <footer className="w-full p-4 bg-info border-0 shadow md:flex md:items-center md:justify-between md:p-6">
       <div className="w-full max-w-screen-xl mx-auto p-4 md:py-8">
         <div className="sm:flex sm:items-center sm:justify-between">
           <a className="flex items-center mb-4 sm:mb-0 space-x-3 rtl:space-x-reverse">
@@ -58,6 +58,9 @@ export default function Footer(): JSX.Element {
               src="/WelleDrive-Logo.png"
               className="h-12 justify-center"
               alt="WelleDrive Logo"
+              style={{
+                filter: "brightness(0%) contrast(100%) saturate(0)",
+              }}
             />
           </a>
           <ul className="flex flex-wrap items-center mb-6 text-sm font-medium text-gray-900 sm:mb-0">
