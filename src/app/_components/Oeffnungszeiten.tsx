@@ -61,41 +61,50 @@ export default function Oeffnungszeiten() {
   ];
 
   return (
-    <div className="w-full max-w-4xl mx-auto p-4">
-      <h1 className="text-3xl font-bold mb-6 text-center">
-        Öffnungszeiten unseres Büros
-      </h1>
-      <div className="grid md:grid-cols-2 gap-6">
-        {standorte.map((standort) => (
-          <Card key={standort.name}>
-            <CardHeader>
-              <CardTitle>{standort.name}</CardTitle>
-              <Link href={standort.mapsLink} passHref={true}>
-                <p className="text-sm text-muted-foreground">
-                  {standort.adresse}
-                </p>
-              </Link>
-            </CardHeader>
-            <CardContent>
-              <Table>
-                <TableHeader>
-                  <TableRow>
-                    <TableHead className="w-1/2">Tag</TableHead>
-                    <TableHead className="w-1/2">Öffnungszeiten</TableHead>
-                  </TableRow>
-                </TableHeader>
-                <TableBody>
-                  {standort.oeffnungszeiten.map((zeit) => (
-                    <TableRow key={zeit.tag}>
-                      <TableCell className="font-medium">{zeit.tag}</TableCell>
-                      <TableCell>{zeit.zeit}</TableCell>
+    <div className="bg-neutral" id="öffnungszeiten">
+      <div className="w-full max-w-4xl mx-auto p-4 md:p-12">
+        <h1 className="text-3xl font-bold mb-6 text-center">
+          Öffnungszeiten unseres Büros
+        </h1>
+        <p className="text-center">
+          Ihr erreicht uns zu unseren Öffnungszeiten vor Ort oder per Telefon.
+          <br />
+          <br />
+        </p>
+        <div className="grid md:grid-cols-2 gap-6">
+          {standorte.map((standort) => (
+            <Card className="bg-white" key={standort.name}>
+              <CardHeader>
+                <CardTitle>{standort.name}</CardTitle>
+                <Link href={standort.mapsLink} passHref={true}>
+                  <p className="text-sm text-muted-foreground">
+                    {standort.adresse}
+                  </p>
+                </Link>
+              </CardHeader>
+              <CardContent>
+                <Table>
+                  <TableHeader>
+                    <TableRow>
+                      <TableHead className="w-1/2">Tag</TableHead>
+                      <TableHead className="w-1/2">Öffnungszeiten</TableHead>
                     </TableRow>
-                  ))}
-                </TableBody>
-              </Table>
-            </CardContent>
-          </Card>
-        ))}
+                  </TableHeader>
+                  <TableBody>
+                    {standort.oeffnungszeiten.map((zeit) => (
+                      <TableRow key={zeit.tag}>
+                        <TableCell className="font-medium">
+                          {zeit.tag}
+                        </TableCell>
+                        <TableCell>{zeit.zeit}</TableCell>
+                      </TableRow>
+                    ))}
+                  </TableBody>
+                </Table>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
       </div>
     </div>
   );

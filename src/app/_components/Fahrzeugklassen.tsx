@@ -110,13 +110,17 @@ export default function Fahrzeugklassen() {
 
   return (
     <>
-      <div className="w-full max-w-4xl mx-auto p-4">
+      <div
+        className="w-full max-w-4xl mx-auto p-4 md:p-12"
+        id="fahrzeugklassen"
+      >
         <h1 className="text-3xl font-bold text-center mb-8">Fahrzeugklassen</h1>
         <Card className="rounded-lg">
           <div className="grid grid-cols-1 md:grid-cols-4 items-start">
             <div className="w-full flex-shrink-0 relative">
               <nav className="grid grid-cols-2 md:grid-cols-1 h-full">
                 <TabButton
+                  //TODO: Change icons
                   icon={<Car className="h-5 w-5" />}
                   title="Klasse B"
                   isActive={activeTab === "B"}

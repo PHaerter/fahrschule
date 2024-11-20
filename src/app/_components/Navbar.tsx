@@ -1,76 +1,101 @@
-import Link from "next/link";
+"use client"; // Diese Zeile markiert die Datei als Client-Komponente
 
-export default function Navbar() {
+import Link from "next/link";
+import { useRouter } from "next/navigation"; // Verwende `next/navigation` für Client-Side Navigation
+import { useEffect } from "react";
+import { handleNavigationAndScroll } from "../utils/scrollUtils";
+
+// Seitenliste
+const pages = [
+  { href: "#fahrzeugklassen", label: "Führerschein" },
+  { href: "#öffnungszeiten", label: "Öffnungszeiten" },
+  { href: "#kontakt", label: "Kontakt" },
+];
+
+export default function Navbar(): JSX.Element {
+  const renderNavItems = () =>
+    pages.map((page) => (
+      <li key={page.href}>
+        <a
+          href={page.href}
+          onClick={(e) =>
+            handleNavigationAndScroll(e, page.href.substring(1), router)
+          } // Entferne das '#' für die ID
+          className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-primary md:p-0"
+        >
+          {page.label}
+        </a>
+      </li>
+    ));
+
+  const router = useRouter();
+
+  useEffect(() => {
+    // Überprüfe, ob ein Scroll-Ziel im lokalen Speicher vorhanden ist
+    const targetId = localStorage.getItem("scrollTarget");
+    if (targetId) {
+      // Scrolle zur gespeicherten Sektion und lösche den Wert aus dem Speicher
+      const observer = new MutationObserver(() => {
+        const anchor = document.getElementById(targetId);
+        if (anchor) {
+          anchor.scrollIntoView({ behavior: "smooth" });
+          observer.disconnect(); // Observer deaktivieren, nachdem die Section gefunden wurde
+        }
+      });
+
+      observer.observe(document.body, { childList: true, subtree: true });
+      localStorage.removeItem("scrollTarget");
+    }
+  }, []);
+
   return (
-    <>
-      <nav className="bg-base-200 w-full z-20 start-0 border-0">
-        <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-2">
-          <img
-            src="/WelleDrive-Logo.png"
-            className="h-12"
-            alt="WelleDrive Logo"
-          />
-          <div className="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
-            <button className="btn btn-primary">Kontakt</button>
-            <button
-              data-collapse-toggle="navbar-sticky"
-              type="button"
-              className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
-              aria-controls="navbar-sticky"
-              aria-expanded="false"
-            >
-              <span className="sr-only">Open main menu</span>
-              <svg
-                className="w-5 h-5"
-                aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 17 14"
-              >
-                <path
-                  stroke="currentColor"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M1 1h15M1 7h15M1 13h15"
-                />
-              </svg>
-            </button>
-          </div>
-          <div
-            className="items-center justify-between hidden w-full md:flex md:w-auto md:order-1"
-            id="navbar-sticky"
+    <nav className="bg-neutral w-full z-20 start-0 border-0" id="startseite">
+      <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-2">
+        <img
+          src="/WelleDrive-Logo.png"
+          className="h-12"
+          alt="WelleDrive Logo"
+        />
+        <div className="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
+          <Link href="#kontakt">
+            <button className="btn btn-sm h-10 btn-primary text-white">
+              Kontakt
+            </button>{" "}
+          </Link>
+          <button
+            data-collapse-toggle="navbar-sticky"
+            type="button"
+            className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
+            aria-controls="navbar-sticky"
+            aria-expanded="false"
           >
-            <ul className="flex flex-col p-4 md:p-0 mt-4 font-medium rounded-lg md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 border-0">
-              <li>
-                <a
-                  href="#"
-                  className="block py-2 px-3 text-white bg-primary rounded md:bg-transparent md:text-primary md:p-0"
-                  aria-current="page"
-                >
-                  Startseite
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-primary md:p-0"
-                >
-                  Führerschein
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-primary md:p-0"
-                >
-                  Öffnungszeiten
-                </a>
-              </li>
-            </ul>
-          </div>
+            <span className="sr-only">Open main menu</span>
+            <svg
+              className="w-5 h-5"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 17 14"
+            >
+              <path
+                stroke="currentColor"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M1 1h15M1 7h15M1 13h15"
+              />
+            </svg>
+          </button>
         </div>
-      </nav>
-    </>
+        <div
+          className="items-center justify-between hidden w-full md:flex md:w-auto md:order-1"
+          id="navbar-sticky"
+        >
+          <ul className="flex flex-col p-4 md:p-0 mt-4 font-medium rounded-lg md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 border-0">
+            {renderNavItems()}
+          </ul>
+        </div>
+      </div>
+    </nav>
   );
 }

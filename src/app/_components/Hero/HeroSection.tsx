@@ -9,11 +9,11 @@ export default function HeroSection() {
   const yStart = Math.sin((angle * Math.PI) / 180) * distance;
 
   return (
-    <div className="hero min-h-[60vh]">
+    <div className="hero min-h-[50vh] md:md:p-12">
       <div className="hero-content flex-col md:flex-row-reverse">
         <motion.img
           src="/vw_t-roc.png"
-          className="max-w-lg rounded-lg"
+          className="w-[80%] md:w-[50%] rounded-lg"
           alt="Fahrschulauto"
           initial={{ x: xStart, y: yStart }}
           animate={{ x: 0, y: 0 }}

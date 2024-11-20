@@ -1,20 +1,47 @@
 import type { Config } from "tailwindcss";
 
 export default {
-  content: [
+    darkMode: ["class"],
+    content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    extend: {
-      colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
-      },
-    },
+  	extend: {
+  		colors: {
+  			background: 'var(--background)',
+  			foreground: 'var(--foreground)'
+  		},
+  		keyframes: {
+  			'accordion-down': {
+  				from: {
+  					height: '0'
+  				},
+  				to: {
+  					height: 'var(--radix-accordion-content-height)'
+  				}
+  			},
+  			'accordion-up': {
+  				from: {
+  					height: 'var(--radix-accordion-content-height)'
+  				},
+  				to: {
+  					height: '0'
+  				}
+  			}
+  		},
+  		animation: {
+  			'accordion-down': 'accordion-down 0.2s ease-out',
+  			'accordion-up': 'accordion-up 0.2s ease-out'
+  		}
+  	}
   },
-  plugins: [require("daisyui")],
+  plugins: [
+    require("daisyui"),
+    require("tailwindcss"),
+    require("autoprefixer"),
+  ],
   daisyui: {
     themes: [
       {
@@ -31,11 +58,11 @@ export default {
 
           "accent-content": "#ced9f2",
 
-          neutral: "#f3f4f6",
+          neutral: "#f2f2f2",
 
           "neutral-content": "#141415",
 
-          "base-100": "#f3f4f6",
+          "base-100": "#ffffff",
 
           "base-200": "#d3d4d6",
 
