@@ -12,6 +12,8 @@ const pages = [
   { href: "#kontakt", label: "Kontakt" },
 ];
 
+//TODO : Phone Page ICON Dropdown Menu
+
 export default function Navbar(): JSX.Element {
   const renderNavItems = () =>
     pages.map((page) => (
@@ -81,7 +83,7 @@ export default function Navbar(): JSX.Element {
               viewBox="0 0 17 14"
             >
               <path
-                stroke="currentColor"
+                stroke="white"
                 strokeLinecap="round"
                 strokeLinejoin="round"
                 strokeWidth="2"
