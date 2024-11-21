@@ -1,9 +1,9 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import { useEffect } from "react";
 
 import { handleNavigationAndScroll } from "../utils/scrollUtils";
+import Image from "next/image";
 
 // Seitenliste
 const footerLinks = [
@@ -54,10 +54,12 @@ export default function Footer(): JSX.Element {
       <div className="w-full max-w-screen-xl mx-auto p-4 md:py-8">
         <div className="sm:flex sm:items-center sm:justify-between">
           <a className="flex items-center mb-4 sm:mb-0 space-x-3 rtl:space-x-reverse">
-            <img
-              src="/WelleDrive-Logo.png"
+            <Image
+              src="/WelleDrive-Logo.webp"
               className="h-12 justify-center"
               alt="WelleDrive Logo"
+              width="106"
+              height="48"
               style={{
                 filter: "brightness(0%) contrast(100%) saturate(0)",
               }}

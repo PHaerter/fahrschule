@@ -24,12 +24,19 @@ import Link from "next/link";
 
 // Schema: Jetzt mit firstName, lastName und subject
 const contactFormSchema = z.object({
-  firstName: z.string().min(2, { message: "Please enter your first name" }),
-  lastName: z.string().min(2, { message: "Please enter your last name" }),
-  email: z.string().email({ message: "Please enter a valid email address" }),
-  subject: z.string().min(5, { message: "Please enter a subject" }),
+  firstName: z
+    .string()
+    .min(2, { message: "Bitte geben Sie Ihren Vornamen ein." }),
+  lastName: z
+    .string()
+    .min(2, { message: "Bitte geben Sie Ihren Nachnamen ein." }),
+  email: z
+    .string()
+    .email({ message: "Bitte geben Sie eine gültige Email-Adresse ein." }),
+  subject: z.string().min(5, { message: "Bitte geben sie einen Betreff ein." }),
   message: z.string().min(10, {
-    message: "Please make sure your message is at least 10 characters long.",
+    message:
+      "Bitte stellen Sie sicher, dass Ihre Nachricht mindestens 10 Zeichen lang ist.",
   }),
 });
 

@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation"; // Verwende `next/navigation` für Client-Side Navigation
 import { useEffect } from "react";
 import { handleNavigationAndScroll } from "../utils/scrollUtils";
+import Image from "next/image";
 
 // Seitenliste
 const pages = [
@@ -53,10 +54,12 @@ export default function Navbar(): JSX.Element {
   return (
     <nav className="bg-info w-full z-20 start-0 border-0" id="startseite">
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-2">
-        <img
-          src="/WelleDrive-Logo.png"
+        <Image
+          src="/WelleDrive-Logo.webp"
           className="h-12"
           alt="WelleDrive Logo"
+          width="106"
+          height="48"
           style={{
             filter: "brightness(0%) contrast(100%) saturate(0)",
           }}

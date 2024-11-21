@@ -1,7 +1,6 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
-import { Car, Truck } from "lucide-react";
+import { useState, useRef } from "react";
 import { cn } from "@/lib/utils";
 import { Card } from "./ui/card";
 import React from "react";
@@ -9,35 +8,8 @@ import React from "react";
 export default function Fahrzeugklassen() {
   const [activeTab, setActiveTab] = useState("B96");
   const [hoveredTab, setHoveredTab] = useState<string | null>(null);
-  const [isBottomButtonVisible, setIsBottomButtonVisible] = useState(false);
 
   const bottomButtonRef = useRef<HTMLButtonElement | null>(null);
-  const containerRef = useRef<HTMLDivElement | null>(null);
-
-  // Update visibility based on scroll or resize
-  useEffect(() => {
-    const checkButtonPosition = () => {
-      if (containerRef.current && bottomButtonRef.current) {
-        const containerRect = containerRef.current.getBoundingClientRect();
-        const buttonRect = bottomButtonRef.current.getBoundingClientRect();
-
-        // Check if the bottom button is at the bottom of the container
-        setIsBottomButtonVisible(buttonRect.bottom <= containerRect.bottom);
-      }
-    };
-
-    // Add event listeners for resizing or scrolling
-    window.addEventListener("resize", checkButtonPosition);
-    window.addEventListener("scroll", checkButtonPosition);
-
-    // Initial check
-    checkButtonPosition();
-
-    return () => {
-      window.removeEventListener("resize", checkButtonPosition);
-      window.removeEventListener("scroll", checkButtonPosition);
-    };
-  }, []);
 
   const tabContent: { [key: string]: { title: string; content: JSX.Element } } =
     {
@@ -111,10 +83,7 @@ export default function Fahrzeugklassen() {
 
   return (
     <>
-      <div
-        className="w-full max-w-4xl mx-auto p-4 md:p-12"
-        id="fahrzeugklassen"
-      >
+      <div className="w-full max-w-4xl mx-auto p-12" id="fahrzeugklassen">
         <h1 className="text-3xl font-bold text-center mb-8">Fahrzeugklassen</h1>
         <Card className="rounded-lg">
           <div className="grid grid-cols-1 md:grid-cols-4 items-start">
@@ -136,6 +105,7 @@ export default function Fahrzeugklassen() {
                   onClick={() => setActiveTab("BF17")}
                   onMouseEnter={() => setHoveredTab("BF17")}
                   onMouseLeave={() => setHoveredTab(null)}
+                  className="rounded-tr-lg md:rounded-none"
                 />
                 <TabButton
                   icon={<TrailerIcon height="15px" width="15px" />}
@@ -152,10 +122,7 @@ export default function Fahrzeugklassen() {
                   onClick={() => setActiveTab("B96")}
                   onMouseEnter={() => setHoveredTab("B96")}
                   onMouseLeave={() => setHoveredTab(null)}
-                  className={cn(
-                    "rounded-bl-lg",
-                    !isBottomButtonVisible && "rounded-none"
-                  )}
+                  className="md:rounded-bl-lg"
                   ref={bottomButtonRef}
                 />
               </nav>

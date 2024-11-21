@@ -3,6 +3,7 @@
 import { MapPin, Phone, Mail } from "lucide-react";
 import { Card, CardHeader, CardTitle, CardContent } from "../ui/card";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function KontaktdatenComponent() {
   return (
@@ -55,10 +56,12 @@ export default function KontaktdatenComponent() {
           </div>
         </div>
         <div className="flex w-full justify-center">
-          <img
-            src="/WelleDrive-Logo.png"
+          <Image
+            src="/WelleDrive-Logo.webp"
             className="h-20"
             alt="WelleDrive Logo"
+            width="176"
+            height="80"
             style={{
               filter: "brightness(0%) contrast(100%) saturate(0)",
             }}
