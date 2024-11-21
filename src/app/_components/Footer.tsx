@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import { handleNavigationAndScroll } from "../utils/scrollUtils";
 import Image from "next/image";
 
+//TODO: Impressum
 // Seitenliste
 const footerLinks = [
   { href: "#fahrzeugklassen", label: "Führerschein" },
