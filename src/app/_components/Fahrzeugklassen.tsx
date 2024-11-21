@@ -5,6 +5,7 @@ import { cn } from "@/lib/utils";
 import { Card } from "./ui/card";
 import React from "react";
 
+//TODO change default to B
 export default function Fahrzeugklassen() {
   const [activeTab, setActiveTab] = useState("B96");
   const [hoveredTab, setHoveredTab] = useState<string | null>(null);
