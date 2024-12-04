@@ -9,7 +9,7 @@ const faqData = [
   {
     question: "Wie alt muss ich sein, um mit dem Führerschein zu beginnen?",
     answer:
-      "In Deutschland können Sie mit 16 Jahren und 9 Monaten mit der theoretischen Ausbildung beginnen. Die praktische Ausbildung kann ab 17 Jahren starten. Den Führerschein der Klasse B können Sie frühestens mit 17 Jahren erwerben (begleitetes Fahren) oder regulär mit 18 Jahren.",
+      "In Deutschland kannst Du mit 16 Jahren und 6 Monaten mit der theoretischen Ausbildung beginnen. Die praktische Ausbildung kann ab 17 Jahren starten. Den Führerschein der Klasse B kannst Du frühestens mit 17 Jahren erwerben (begleitetes Fahren) oder regulär mit 18 Jahren.",
   },
   {
     question: "Wie viele Theoriestunden sind erforderlich?",
@@ -19,17 +19,22 @@ const faqData = [
   {
     question: "Wie viele Fahrstunden benötige ich?",
     answer:
-      "Die Anzahl der benötigten Fahrstunden variiert je nach individuellen Fähigkeiten. Durchschnittlich absolvieren Fahrschüler etwa 25-40 Fahrstunden. Gesetzlich vorgeschrieben sind Sonderfahrten wie Überlandfahrten, Autobahnfahrten und Nachtfahrten.",
+      "Die Anzahl der benötigten Fahrstunden variiert je nach individuellen Fähigkeiten. Durchschnittlich absolvieren Fahrschüler etwa 25-40 Fahrstunden. Gesetzlich vorgeschrieben sind außerdem 12 Sonderfahrten davon 5 Überlandfahrten, 4 Autobahnfahrten und 3 Nachtfahrten.",
   },
   {
     question: "Was kostet der Führerschein insgesamt?",
     answer:
-      "Die Gesamtkosten für einen Führerschein der Klasse B liegen in der Regel zwischen 1.500 und 3.000 Euro. Dies hängt von der Anzahl der benötigten Fahrstunden und regionalen Preisunterschieden ab. Eine genaue Kostenaufstellung erhalten Sie in unserer Fahrschule.",
+      "Die Gesamtkosten für einen Führerschein der Klasse B liegen in der Regel zwischen 2.500 und 4.000 Euro. Dies hängt von der Anzahl der benötigten Fahrstunden ab. Eine genaue Kostenaufstellung erhaltst Du in unserer Fahrschule.",
   },
   {
     question: "Wie lange dauert die Ausbildung durchschnittlich?",
     answer:
-      "Die Dauer der Führerscheinausbildung variiert, liegt aber typischerweise zwischen 3 und 6 Monaten. Dies hängt von Ihrer Lerngeschwindigkeit und der Häufigkeit der Theorie- und Praxisstunden ab.",
+      "Die Dauer der Führerscheinausbildung variiert, liegt aber typischerweise zwischen 5 und 8 Monaten. Dies hängt von Ihrer Lerngeschwindigkeit und der Häufigkeit der Praxisstunden ab.",
+  },
+  {
+    question: "Kann ich auch schon während des Theorieunterrichts fahren?",
+    answer:
+      "Ja, wenn Du die Lernapp bereits einmal durchgearbeitet hast und Du dich theoretisch schon im Straßenverkehr auskennst, kannst Du auch schon mit den Fahrstunden beginnen.",
   },
 ];
 

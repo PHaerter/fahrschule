@@ -49,6 +49,22 @@ export default function KontaktdatenComponent() {
           </div>
         </div>
         <div className="flex items-center">
+          <Phone className="w-5 h-5 mr-4 text-neutral-900" />
+          <div>
+            <p className="font-semibold">Telefon:</p>
+            <p> Büro Itzehoe </p>
+            <p>04821 / 60 79 282</p>
+          </div>
+        </div>
+        <div className="flex items-center">
+          <Phone className="w-5 h-5 mr-4 text-neutral-900" />
+          <div>
+            <p className="font-semibold">Telefon:</p>
+            <p> Büro Krempe </p>
+            <p>04824 / 515 99 54</p>
+          </div>
+        </div>
+        <div className="flex items-center">
           <Mail className="w-5 h-5 mr-4 text-neutral-900" />
           <div>
             <p className="font-semibold">E-Mail:</p>

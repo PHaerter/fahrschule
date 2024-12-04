@@ -14,6 +14,9 @@ const pages = [
 ];
 
 //TODO : Phone Page ICON Dropdown Menu
+//TODO: Impressum
+//TODO: FAQ statt Kontakt in der Navbar zum Scrollen
+//TODO: Logo verlinken
 
 export default function Navbar(): JSX.Element {
   const renderNavItems = () =>

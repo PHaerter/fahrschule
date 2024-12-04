@@ -40,7 +40,7 @@ export default function Fahrzeugklassen() {
             </p>
             <ul className="list-disc pl-5 space-y-2">
               <li>Gleiche Rechte wie bei Klasse B</li>
-              <li>Begleitperson muss mindestens 30 Jahre alt sein</li>
+              <li>Begleitperson muss mindestens 35 Jahre alt sein</li>
               <li>
                 Mindestens 5 Jahre Fahrpraxis und max. 1 Punkt in Flensburg
               </li>
