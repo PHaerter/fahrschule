@@ -2,10 +2,10 @@ import Image from "next/image";
 
 export default function HeroSection() {
   return (
-    <div className="hero min-h-[50vh] lg:p-12">
+    <div className="hero min-h-[50vh] lg:p-12" id="startseite">
       <div className="hero-content flex-col lg:flex-row-reverse">
         <Image
-          src="/vw_t-roc-street_trees.webp"
+          src="/vw_t-roc.webp"
           width={800}
           height={600}
           className="w-[80%] lg:w-[60%] rounded-lg"

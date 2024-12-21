@@ -40,7 +40,7 @@ const faqData = [
 
 export default function FAQ_Component() {
   return (
-    <div className="bg-neutral">
+    <div className="bg-neutral" id="faq">
       <div className="w-full max-w-3xl mx-auto p-12 space-y-6">
         <h2 className="text-3xl font-bold text-center mb-6">
           Häufig gestellte Fragen

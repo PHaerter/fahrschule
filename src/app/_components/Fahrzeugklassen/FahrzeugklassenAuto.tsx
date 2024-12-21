@@ -2,11 +2,11 @@
 
 import { useState, useRef } from "react";
 import { cn } from "@/lib/utils";
-import { Card } from "./ui/card";
+import { Card } from "../ui/card";
 import React from "react";
 
 //TODO change default to B
-export default function Fahrzeugklassen() {
+export default function FahrzeugklassenAuto() {
   const [activeTab, setActiveTab] = useState("B96");
   const [hoveredTab, setHoveredTab] = useState<string | null>(null);
 
@@ -84,8 +84,9 @@ export default function Fahrzeugklassen() {
 
   return (
     <>
-      <div className="w-full max-w-4xl mx-auto p-12" id="fahrzeugklassen">
-        <h1 className="text-3xl font-bold text-center mb-8">Fahrzeugklassen</h1>
+      
+      <div className="w-full max-w-4xl mx-auto px-12" id="fahrzeugklassenAuto">
+      <h2 className="text-2xl font-bold mb-3 px-12 text-center md:text-left">Auto</h2>
         <Card className="rounded-lg">
           <div className="grid grid-cols-1 md:grid-cols-4 items-start">
             <div className="w-full flex-shrink-0 relative">

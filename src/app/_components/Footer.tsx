@@ -9,13 +9,19 @@ import Image from "next/image";
 // Seitenliste
 const footerLinks = [
   { href: "#fahrzeugklassen", label: "Führerschein" },
-  { href: "#öffnungszeiten", label: "Öffnungszeiten" },
+  { href: "#oeffnungszeiten", label: "Öffnungszeiten" },
+  { href: "#faq", label: "FAQ" },
   { href: "#kontakt", label: "Kontakt" },
   {
     href: "/datenschutz",
     label: "Datenschutzhinweise",
     external: true,
   }, // Externes Ziel
+  {
+    href: "/impressum",
+    label: "Impressum",
+    external: true,
+  },
 ];
 
 export default function Footer(): JSX.Element {
@@ -38,9 +44,8 @@ export default function Footer(): JSX.Element {
       ) : (
         <li key={link.href}>
           <a
-            href={link.href}
             onClick={(e) =>
-              handleNavigationAndScroll(e, link.href.substring(1), router)
+              handleNavigationAndScroll(link.href.substring(1), router)
             } // Entferne das '#' für die ID
             className="hover:underline me-4 md:me-6"
           >
@@ -51,10 +56,10 @@ export default function Footer(): JSX.Element {
     );
 
   return (
-    <footer className="w-full p-4 bg-info border-0 shadow md:flex md:items-center md:justify-between md:p-6">
+    <footer className="w-full bg-info border-0 shadow md:flex md:items-center md:justify-between">
       <div className="w-full max-w-screen-xl mx-auto p-4 md:py-8">
         <div className="sm:flex sm:items-center sm:justify-between">
-          <a className="flex items-center mb-4 sm:mb-0 space-x-3 rtl:space-x-reverse">
+          <a className="flex items-center mb-4 sm:mb-0 space-x-3 rtl:space-x-reverse  mr-5">
             <Image
               src="/WelleDrive-Logo.webp"
               className="h-12 justify-center"
@@ -66,7 +71,7 @@ export default function Footer(): JSX.Element {
               }}
             />
           </a>
-          <ul className="flex flex-wrap items-center mb-6 text-sm font-medium text-gray-900 sm:mb-0">
+          <ul className="flex flex-wrap items-center mb-6 text-lg font-medium text-black sm:mb-0">
             {renderFooterLinks()}
           </ul>
         </div>

@@ -80,14 +80,14 @@ export default function ContactForm() {
             onSubmit={form.handleSubmit(onSubmit)}
           >
             {/* First Name and Last Name fields side by side */}
-            <div className="flex space-x-4">
+            <div className="flex space-x-4 w-full">
               <FormField
                 control={form.control}
                 name="firstName"
                 render={({ field }) => (
                   <FormItem>
                     <FormControl>
-                      <Input placeholder="Vorname" {...field} />
+                      <Input className="w-full" placeholder="Vorname" {...field} />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -99,7 +99,7 @@ export default function ContactForm() {
                 render={({ field }) => (
                   <FormItem>
                     <FormControl>
-                      <Input placeholder="Nachname" {...field} />
+                      <Input className="w-full" placeholder="Nachname" {...field}  />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -142,7 +142,7 @@ export default function ContactForm() {
               render={({ field }) => (
                 <FormItem>
                   <FormControl>
-                    <Textarea {...field} placeholder="Nachricht" />
+                    <Textarea {...field} placeholder="Nachricht" className="h-[150px] md:h-[265px]" />
                   </FormControl>
                   <FormMessage />
                 </FormItem>

@@ -8,13 +8,12 @@ import Image from "next/image";
 
 // Seitenliste
 const pages = [
+  { href: "#oeffnungszeiten", label: "Öffnungszeiten" },
   { href: "#fahrzeugklassen", label: "Führerschein" },
-  { href: "#öffnungszeiten", label: "Öffnungszeiten" },
-  { href: "#kontakt", label: "Kontakt" },
+  { href: "#faq", label: "FAQ" },
 ];
 
 //TODO : Phone Page ICON Dropdown Menu
-//TODO: Impressum
 //TODO: FAQ statt Kontakt in der Navbar zum Scrollen
 //TODO: Logo verlinken
 
@@ -23,11 +22,10 @@ export default function Navbar(): JSX.Element {
     pages.map((page) => (
       <li key={page.href}>
         <a
-          href={page.href}
           onClick={(e) =>
-            handleNavigationAndScroll(e, page.href.substring(1), router)
+            handleNavigationAndScroll(page.href.substring(1), router)
           } // Entferne das '#' für die ID
-          className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-white md:p-0"
+          className="block py-2 px-3 text-gray-900 text-lg rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-white md:p-0"
         >
           {page.label}
         </a>
@@ -57,22 +55,27 @@ export default function Navbar(): JSX.Element {
   return (
     <nav className="bg-info w-full z-20 start-0 border-0" id="startseite">
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-2">
-        <Image
-          src="/WelleDrive-Logo.webp"
-          className="h-12"
-          alt="WelleDrive Logo"
-          width="106"
-          height="48"
-          style={{
-            filter: "brightness(0%) contrast(100%) saturate(0)",
-          }}
-        />
+        <a href="/">
+          <Image
+            src="/WelleDrive-Logo.webp"
+            className="h-12"
+            alt="WelleDrive Logo"
+            width="106"
+            height="48"
+            style={{
+              filter: "brightness(0%) contrast(100%) saturate(0)",
+            }}
+          />
+        </a>
         <div className="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
-          <Link href="#kontakt">
-            <button className="btn btn-sm h-10 btn-accent text-white">
+          <a>
+            <button
+              className="btn btn-sm h-10 btn-accent text-white"
+              onClick={(e) => handleNavigationAndScroll("kontakt", router)}
+            >
               Kontakt
             </button>{" "}
-          </Link>
+          </a>
           <button
             data-collapse-toggle="navbar-sticky"
             type="button"

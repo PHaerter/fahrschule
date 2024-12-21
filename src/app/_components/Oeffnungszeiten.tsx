@@ -61,7 +61,7 @@ export default function Oeffnungszeiten() {
   ];
 
   return (
-    <div className="bg-neutral" id="öffnungszeiten">
+    <div className="bg-neutral" id="oeffnungszeiten">
       <div className="w-full max-w-4xl mx-auto p-12">
         <h1 className="text-3xl font-bold mb-6 text-center">
           Öffnungszeiten unseres Büros
