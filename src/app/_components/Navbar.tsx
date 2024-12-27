@@ -22,7 +22,7 @@ export default function Navbar(): JSX.Element {
     pages.map((page) => (
       <li key={page.href}>
         <a
-          onClick={(e) =>
+          onClick={() =>
             handleNavigationAndScroll(page.href.substring(1), router)
           } // Entferne das '#' für die ID
           className="block py-2 px-3 text-gray-900 text-lg rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-white md:p-0"
@@ -55,7 +55,7 @@ export default function Navbar(): JSX.Element {
   return (
     <nav className="bg-info w-full z-20 start-0 border-0" id="startseite">
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-2">
-        <a href="/">
+        <Link href="/">
           <Image
             src="/WelleDrive-Logo.webp"
             className="h-12"
@@ -66,12 +66,12 @@ export default function Navbar(): JSX.Element {
               filter: "brightness(0%) contrast(100%) saturate(0)",
             }}
           />
-        </a>
+        </Link>
         <div className="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
           <a>
             <button
               className="btn btn-sm h-10 btn-accent text-white"
-              onClick={(e) => handleNavigationAndScroll("kontakt", router)}
+              onClick={() => handleNavigationAndScroll("kontakt", router)}
             >
               Kontakt
             </button>{" "}

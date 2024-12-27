@@ -44,7 +44,7 @@ export default function Footer(): JSX.Element {
       ) : (
         <li key={link.href}>
           <a
-            onClick={(e) =>
+            onClick={() =>
               handleNavigationAndScroll(link.href.substring(1), router)
             } // Entferne das '#' für die ID
             className="hover:underline me-4 md:me-6"
