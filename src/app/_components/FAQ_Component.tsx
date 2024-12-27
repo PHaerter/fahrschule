@@ -9,12 +9,12 @@ const faqData = [
   {
     question: "Wie alt muss ich sein, um mit dem Führerschein zu beginnen?",
     answer:
-      "In Deutschland kannst Du mit 16 Jahren und 6 Monaten mit der theoretischen Ausbildung beginnen. Die praktische Ausbildung kann ab 17 Jahren starten. Den Führerschein der Klasse B kannst Du frühestens mit 17 Jahren erwerben (begleitetes Fahren) oder regulär mit 18 Jahren.",
+      "In Deutschland kannst Du mit 16 Jahren und 6 Monaten mit der Ausbildung beginnen, wenn du mit Begleitung fahren möchtest. Den regulären Führerschein der Klasse B kannst Du mit 17 Jahren und 6 Monaten beginnen.",
   },
   {
     question: "Wie viele Theoriestunden sind erforderlich?",
     answer:
-      "Für den Führerschein der Klasse B sind mindestens 14 Theoriestunden à 90 Minuten vorgeschrieben. Diese decken verschiedene Themen wie Verkehrsregeln, Fahrzeugtechnik und Umweltschutz ab.",
+      "Für den Führerschein der Klasse B sind mindestens 14 Theoriestunden à 90 Minuten vorgeschrieben. Diese decken verschiedene Themen wie Verkehrsregeln, Fahrzeugtechnik und Umweltschutz ab. Für den Motorradführerschein werden 16 Theoriestunden benötigt.",
   },
   {
     question: "Wie viele Fahrstunden benötige ich?",
@@ -24,7 +24,7 @@ const faqData = [
   {
     question: "Was kostet der Führerschein insgesamt?",
     answer:
-      "Die Gesamtkosten für einen Führerschein der Klasse B liegen in der Regel zwischen 2.500 und 4.000 Euro. Dies hängt von der Anzahl der benötigten Fahrstunden ab. Eine genaue Kostenaufstellung erhaltst Du in unserer Fahrschule.",
+      "Die Gesamtkosten für einen Führerschein der Klasse B hängen von der Anzahl der benötigten Fahrstunden ab. Eine genaue Kostenaufstellung erhältst Du in unserer Fahrschule. Wir freuen uns auf Dich!",
   },
   {
     question: "Wie lange dauert die Ausbildung durchschnittlich?",
@@ -34,7 +34,7 @@ const faqData = [
   {
     question: "Kann ich auch schon während des Theorieunterrichts fahren?",
     answer:
-      "Ja, wenn Du die Lernapp bereits einmal durchgearbeitet hast und Du dich theoretisch schon im Straßenverkehr auskennst, kannst Du auch schon mit den Fahrstunden beginnen.",
+      "Ja, wenn Du die Lernapp bereits durchgearbeitet hast und Du dich theoretisch schon im Straßenverkehr auskennst, kannst Du auch schon mit den Fahrstunden beginnen.",
   },
 ];
 
