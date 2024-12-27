@@ -7,7 +7,7 @@ import React from "react";
 
 //TODO change default to B
 export default function FahrzeugklassenAuto() {
-  const [activeTab, setActiveTab] = useState("B96");
+  const [activeTab, setActiveTab] = useState("B");
   const [hoveredTab, setHoveredTab] = useState<string | null>(null);
 
   const bottomButtonRef = useRef<HTMLButtonElement | null>(null);
