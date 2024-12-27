@@ -84,9 +84,10 @@ export default function FahrzeugklassenAuto() {
 
   return (
     <>
-      
-      <div className="w-full max-w-4xl mx-auto px-12" id="fahrzeugklassenAuto">
-      <h2 className="text-2xl font-bold mb-3 px-12 text-center md:text-left">Auto</h2>
+      <div className="w-full max-w-4xl mx-auto px-12">
+        <h2 className="text-2xl font-bold mb-3 px-12 text-center md:text-left">
+          Auto
+        </h2>
         <Card className="rounded-lg">
           <div className="grid grid-cols-1 md:grid-cols-4 items-start">
             <div className="w-full flex-shrink-0 relative">
