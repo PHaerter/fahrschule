@@ -86,12 +86,14 @@ export default function FahrzeugklassenMotorrad() {
         content: (
           <>
             <p className="mb-2 text-justify">
-              Die Klasse AM ist der Führerschein für Roller, Mopeds und kleine
-              Quads, die eine Höchstgeschwindigkeit von 45 km/h erreichen.
+              Die Klasse AM ist der Führerschein für Roller, Mopeds, Minicars
+              und kleine Quads, die eine Höchstgeschwindigkeit von 45 km/h
+              erreichen.
             </p>
             <ul className="list-disc pl-5 space-y-2">
               <li>Maximale Geschwindigkeit: 45 km/h</li>
-              <li>Für Roller, Mopeds und Quads</li>
+              <li>Für Roller, Mopeds, Minicars und Quads</li>
+              <li>Ausbildung erfolgt auf einem Roller</li>
               <li>
                 Mindestalter: 15 Jahre (oder 16 Jahre in einigen Bundesländern)
               </li>

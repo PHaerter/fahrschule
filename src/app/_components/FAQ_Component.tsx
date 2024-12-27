@@ -7,7 +7,7 @@ import {
 
 const faqData = [
   {
-    question: "Wie alt muss ich sein, um mit dem Führerschein zu beginnen?",
+    question: "Wie alt muss ich sein, um mit dem Autoführerschein zu beginnen?",
     answer:
       "In Deutschland kannst Du mit 16 Jahren und 6 Monaten mit der Ausbildung beginnen, wenn du mit Begleitung fahren möchtest. Den regulären Führerschein der Klasse B kannst Du mit 17 Jahren und 6 Monaten beginnen.",
   },
@@ -35,6 +35,11 @@ const faqData = [
     question: "Kann ich auch schon während des Theorieunterrichts fahren?",
     answer:
       "Ja, wenn Du die Lernapp bereits durchgearbeitet hast und Du dich theoretisch schon im Straßenverkehr auskennst, kannst Du auch schon mit den Fahrstunden beginnen.",
+  },
+  {
+    question: "Was benötige ich für meine Motorradausbildung?",
+    answer:
+      "Für die Motorradausbildung benötigst du einen eigenen Helm, eigene Schutzkleidung (mit Protektoren) und eigene Motorradschuhe.",
   },
 ];
 
