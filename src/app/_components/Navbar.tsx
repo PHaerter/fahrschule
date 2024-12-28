@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { handleNavigationAndScroll } from "../utils/scrollUtils";
 import Image from "next/image";
 
@@ -15,8 +15,31 @@ const pages = [
 export default function Navbar(): JSX.Element {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const router = useRouter();
+  const menuRef = useRef<HTMLDivElement | null>(null); // Referenz auf das Dropdown-Menü
+  const buttonRef = useRef<HTMLButtonElement | null>(null); // Referenz auf den Button
 
   const toggleMenu = () => setIsMenuOpen((prev) => !prev);
+
+  // Schließen des Menüs, wenn außerhalb geklickt wird
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      // Überprüfen, ob der Klick außerhalb des Buttons oder Menüs war
+      if (
+        menuRef.current &&
+        !menuRef.current.contains(event.target as Node) &&
+        buttonRef.current &&
+        !buttonRef.current.contains(event.target as Node)
+      ) {
+        setIsMenuOpen(false); // Menü schließen
+      }
+    };
+
+    document.addEventListener("click", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("click", handleClickOutside);
+    };
+  }, []);
 
   useEffect(() => {
     const targetId = localStorage.getItem("scrollTarget");
@@ -100,6 +123,7 @@ export default function Navbar(): JSX.Element {
             </button>
           </a>
           <button
+            ref={buttonRef} // Referenz auf den Button
             type="button"
             className={`inline-flex items-center p-2 w-10 h-10 justify-center text-sm rounded-lg md:hidden 
               ${
@@ -132,6 +156,7 @@ export default function Navbar(): JSX.Element {
 
       {/* Mobile Dropdown Menu */}
       <div
+        ref={menuRef} // Die Referenz auf das Menü
         className={`absolute ${isMenuOpen ? "block" : "hidden"} 
           ${isMenuOpen ? "bg-black text-white" : "bg-transparent text-black"} 
           right-0 p-2 rounded shadow-lg md:hidden`}
