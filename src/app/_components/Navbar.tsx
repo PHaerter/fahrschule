@@ -1,59 +1,58 @@
-"use client"; // Diese Zeile markiert die Datei als Client-Komponente
+"use client";
 
 import Link from "next/link";
-import { useRouter } from "next/navigation"; // Verwende `next/navigation` für Client-Side Navigation
-import { useEffect } from "react";
+import { useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
 import { handleNavigationAndScroll } from "../utils/scrollUtils";
 import Image from "next/image";
 
-// Seitenliste
 const pages = [
   { href: "#oeffnungszeiten", label: "Öffnungszeiten" },
   { href: "#fahrzeugklassen", label: "Führerschein" },
   { href: "#faq", label: "FAQ" },
 ];
 
-//TODO : Phone Page ICON Dropdown Menu
-//TODO: FAQ statt Kontakt in der Navbar zum Scrollen
-//TODO: Logo verlinken
-
 export default function Navbar(): JSX.Element {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const router = useRouter();
+
+  const toggleMenu = () => setIsMenuOpen((prev) => !prev);
+
+  useEffect(() => {
+    const targetId = localStorage.getItem("scrollTarget");
+    if (targetId) {
+      const observer = new MutationObserver(() => {
+        const anchor = document.getElementById(targetId);
+        if (anchor) {
+          anchor.scrollIntoView({ behavior: "smooth" });
+          observer.disconnect();
+        }
+      });
+      observer.observe(document.body, { childList: true, subtree: true });
+      localStorage.removeItem("scrollTarget");
+    }
+  }, []);
+
   const renderNavItems = () =>
     pages.map((page) => (
-      <li key={page.href}>
+      <li key={page.href} className="text-right">
         <a
-          onClick={() =>
-            handleNavigationAndScroll(page.href.substring(1), router)
-          } // Entferne das '#' für die ID
-          className="block py-2 px-3 text-gray-900 text-lg rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-white md:p-0"
+          onClick={() => {
+            handleNavigationAndScroll(page.href.substring(1), router);
+            setIsMenuOpen(false);
+          }}
+          className="inline-block py-2 px-3 text-white bg-black rounded hover:bg-gray-700"
         >
           {page.label}
         </a>
       </li>
     ));
 
-  const router = useRouter();
-
-  useEffect(() => {
-    // Überprüfe, ob ein Scroll-Ziel im lokalen Speicher vorhanden ist
-    const targetId = localStorage.getItem("scrollTarget");
-    if (targetId) {
-      // Scrolle zur gespeicherten Sektion und lösche den Wert aus dem Speicher
-      const observer = new MutationObserver(() => {
-        const anchor = document.getElementById(targetId);
-        if (anchor) {
-          anchor.scrollIntoView({ behavior: "smooth" });
-          observer.disconnect(); // Observer deaktivieren, nachdem die Section gefunden wurde
-        }
-      });
-
-      observer.observe(document.body, { childList: true, subtree: true });
-      localStorage.removeItem("scrollTarget");
-    }
-  }, []);
-
   return (
-    <nav className="bg-info w-full z-20 start-0 border-0" id="startseite">
+    <nav
+      className="bg-info w-full z-20 start-0 border-0 relative"
+      id="startseite"
+    >
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-2">
         <Link href="/">
           <Image
@@ -74,14 +73,14 @@ export default function Navbar(): JSX.Element {
               onClick={() => handleNavigationAndScroll("kontakt", router)}
             >
               Kontakt
-            </button>{" "}
+            </button>
           </a>
           <button
-            data-collapse-toggle="navbar-sticky"
             type="button"
             className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
             aria-controls="navbar-sticky"
-            aria-expanded="false"
+            aria-expanded={isMenuOpen}
+            onClick={toggleMenu}
           >
             <span className="sr-only">Open main menu</span>
             <svg
@@ -101,14 +100,15 @@ export default function Navbar(): JSX.Element {
             </svg>
           </button>
         </div>
-        <div
-          className="items-center justify-between hidden w-full md:flex md:w-auto md:order-1"
-          id="navbar-sticky"
-        >
-          <ul className="flex flex-col p-4 md:p-0 mt-4 font-medium rounded-lg md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 border-0">
-            {renderNavItems()}
-          </ul>
-        </div>
+        {/* Navbar items are hidden by default on mobile */}
+      </div>
+      <div
+        className={`absolute ${
+          isMenuOpen ? "block" : "hidden"
+        } bg-black text-white right-0 p-2 rounded shadow-lg`}
+        style={{ minWidth: "150px" }}
+      >
+        <ul className="flex flex-col">{renderNavItems()}</ul>
       </div>
     </nav>
   );
