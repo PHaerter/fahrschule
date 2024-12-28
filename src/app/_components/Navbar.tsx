@@ -33,7 +33,21 @@ export default function Navbar(): JSX.Element {
     }
   }, []);
 
-  const renderNavItems = () =>
+  const renderNavItemsDesktop = () =>
+    pages.map((page) => (
+      <li key={page.href} className="inline-block px-3">
+        <a
+          onClick={() =>
+            handleNavigationAndScroll(page.href.substring(1), router)
+          }
+          className="block py-2 px-3 text-gray-900 text-lg rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-white md:p-0"
+        >
+          {page.label}
+        </a>
+      </li>
+    ));
+
+  const renderNavItemsMobile = () =>
     pages.map((page) => (
       <li key={page.href} className="text-right">
         <a
@@ -54,6 +68,7 @@ export default function Navbar(): JSX.Element {
       id="startseite"
     >
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-2">
+        {/* Logo */}
         <Link href="/">
           <Image
             src="/WelleDrive-Logo.webp"
@@ -66,6 +81,15 @@ export default function Navbar(): JSX.Element {
             }}
           />
         </Link>
+
+        {/* Desktop Navigation */}
+        <div className="hidden md:flex md:items-center space-x-6">
+          <ul className="flex flex-col p-4 md:p-0 mt-4 font-medium rounded-lg md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 border-0">
+            {renderNavItemsDesktop()}
+          </ul>
+        </div>
+
+        {/* Mobile Hamburger Button */}
         <div className="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
           <a>
             <button
@@ -77,21 +101,25 @@ export default function Navbar(): JSX.Element {
           </a>
           <button
             type="button"
-            className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
+            className={`inline-flex items-center p-2 w-10 h-10 justify-center text-sm rounded-lg md:hidden 
+              ${
+                isMenuOpen ? "bg-black text-white" : "bg-transparent text-black"
+              } 
+              hover:bg-black focus:outline-none focus:ring-2 focus:ring-black`}
             aria-controls="navbar-sticky"
             aria-expanded={isMenuOpen}
             onClick={toggleMenu}
           >
             <span className="sr-only">Open main menu</span>
             <svg
-              className="w-5 h-5"
+              className={`w-5 h-5 ${isMenuOpen ? "text-white" : "text-black"}`}
               aria-hidden="true"
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 17 14"
             >
               <path
-                stroke="white"
+                stroke="currentColor"
                 strokeLinecap="round"
                 strokeLinejoin="round"
                 strokeWidth="2"
@@ -100,15 +128,16 @@ export default function Navbar(): JSX.Element {
             </svg>
           </button>
         </div>
-        {/* Navbar items are hidden by default on mobile */}
       </div>
+
+      {/* Mobile Dropdown Menu */}
       <div
-        className={`absolute ${
-          isMenuOpen ? "block" : "hidden"
-        } bg-black text-white right-0 p-2 rounded shadow-lg`}
+        className={`absolute ${isMenuOpen ? "block" : "hidden"} 
+          ${isMenuOpen ? "bg-black text-white" : "bg-transparent text-black"} 
+          right-0 p-2 rounded shadow-lg md:hidden`}
         style={{ minWidth: "150px" }}
       >
-        <ul className="flex flex-col">{renderNavItems()}</ul>
+        <ul className="flex flex-col">{renderNavItemsMobile()}</ul>
       </div>
     </nav>
   );
