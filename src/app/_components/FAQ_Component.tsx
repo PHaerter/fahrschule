@@ -9,7 +9,7 @@ const faqData = [
   {
     question: "Wie alt muss ich sein, um mit dem Autoführerschein zu beginnen?",
     answer:
-      "In Deutschland kannst Du mit 16 Jahren und 6 Monaten mit der Ausbildung beginnen, wenn du mit Begleitung fahren möchtest. Den regulären Führerschein der Klasse B kannst Du mit 17 Jahren und 6 Monaten beginnen.",
+      "In Deutschland kannst du mit 16 Jahren und 6 Monaten mit der Ausbildung beginnen, wenn du mit Begleitung fahren möchtest. Den regulären Führerschein der Klasse B kannst du mit 17 Jahren und 6 Monaten beginnen.",
   },
   {
     question: "Wie viele Theoriestunden sind erforderlich?",
@@ -24,7 +24,7 @@ const faqData = [
   {
     question: "Was kostet der Führerschein insgesamt?",
     answer:
-      "Die Gesamtkosten für einen Führerschein der Klasse B hängen von der Anzahl der benötigten Fahrstunden ab. Eine genaue Kostenaufstellung erhältst Du in unserer Fahrschule. Wir freuen uns auf Dich!",
+      "Die Gesamtkosten für einen Führerschein der Klasse B hängen von der Anzahl der benötigten Fahrstunden ab. Eine genaue Kostenaufstellung erhältst du in unserer Fahrschule. Wir freuen uns auf Dich!",
   },
   {
     question: "Wie lange dauert die Ausbildung durchschnittlich?",
@@ -34,7 +34,7 @@ const faqData = [
   {
     question: "Kann ich auch schon während des Theorieunterrichts fahren?",
     answer:
-      "Ja, wenn Du die Lernapp bereits durchgearbeitet hast und Du dich theoretisch schon im Straßenverkehr auskennst, kannst Du auch schon mit den Fahrstunden beginnen.",
+      "Ja, wenn du die Lernapp bereits durchgearbeitet hast und du dich theoretisch schon im Straßenverkehr auskennst, kannst du auch schon mit den Fahrstunden beginnen.",
   },
   {
     question: "Was benötige ich für meine Motorradausbildung?",
