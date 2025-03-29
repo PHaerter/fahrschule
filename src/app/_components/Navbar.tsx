@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import { useEffect, useState, useRef } from "react";
 import { handleNavigationAndScroll } from "../utils/scrollUtils";
 import Image from "next/image";
+import { JSX } from "react";
 
 const pages = [
   { href: "#oeffnungszeiten", label: "Öffnungszeiten" },

@@ -4,6 +4,7 @@ import { useState, useRef } from "react";
 import { cn } from "@/lib/utils";
 import { Card } from "../ui/card";
 import React from "react";
+import { JSX } from "react";
 
 export default function FahrzeugklassenMotorrad() {
   const [activeTab, setActiveTab] = useState("A");
@@ -319,7 +320,7 @@ function TabButton({
   className = "",
   ref,
 }: {
-  icon: React.ReactNode;
+  icon: React.ReactElement<React.SVGProps<SVGSVGElement>>;
   title: string;
   isActive?: boolean;
   onClick: () => void;
@@ -350,9 +351,12 @@ function TabButton({
     >
       <div className="mt-1 text-current flex flex-col items-center">
         <div className="flex justify-center items-center w-6 h-5">
-          {React.cloneElement(icon as React.ReactElement, {
-            fill: isActive ? "white" : "black",
-          })}
+          {React.cloneElement(
+            icon as React.ReactElement<React.SVGProps<SVGSVGElement>>,
+            {
+              fill: isActive ? "white" : "black",
+            }
+          )}
         </div>
       </div>
       <div>

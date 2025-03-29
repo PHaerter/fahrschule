@@ -87,7 +87,11 @@ export default function ContactForm() {
                 render={({ field }) => (
                   <FormItem>
                     <FormControl>
-                      <Input className="w-full" placeholder="Vorname" {...field} />
+                      <Input
+                        className="w-full"
+                        placeholder="Vorname"
+                        {...field}
+                      />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -99,7 +103,11 @@ export default function ContactForm() {
                 render={({ field }) => (
                   <FormItem>
                     <FormControl>
-                      <Input className="w-full" placeholder="Nachname" {...field}  />
+                      <Input
+                        className="w-full"
+                        placeholder="Nachname"
+                        {...field}
+                      />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -142,7 +150,11 @@ export default function ContactForm() {
               render={({ field }) => (
                 <FormItem>
                   <FormControl>
-                    <Textarea {...field} placeholder="Nachricht" className="h-[150px] md:h-[265px]" />
+                    <Textarea
+                      {...field}
+                      placeholder="Nachricht"
+                      className="h-[150px] md:h-[240px]"
+                    />
                   </FormControl>
                   <FormMessage />
                 </FormItem>

@@ -4,6 +4,7 @@ import { useRouter } from "next/navigation";
 
 import { handleNavigationAndScroll } from "../utils/scrollUtils";
 import Image from "next/image";
+import { JSX } from "react";
 
 //TODO: Impressum
 // Seitenliste

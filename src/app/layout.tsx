@@ -1,4 +1,5 @@
-import type { Metadata } from "next";
+import { Metadata } from "next";
+import Head from "next/head";
 import "./globals.css";
 import Navbar from "./_components/Navbar";
 import Footer from "./_components/Footer";
@@ -23,6 +24,11 @@ export default function RootLayout({
       style={{ scrollBehavior: "smooth" }}
     >
       <body className="flex flex-col min-h-screen">
+        <Head>
+          <meta name="description" content={metadata.description ?? ""} />
+          <meta property="og:image" content="" />
+          <meta name="twitter:image" content="" />
+        </Head>
         <Navbar />
         <div className="flex-grow">{children}</div>
         <Footer />
