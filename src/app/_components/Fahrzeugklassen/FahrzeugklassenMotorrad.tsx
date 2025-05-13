@@ -151,14 +151,14 @@ export default function FahrzeugklassenMotorrad() {
                   onMouseLeave={() => setHoveredTab(null)}
                   className="rounded-tr-lg md:rounded-none"
                 />
-                <TabButton
+                {/*                 <TabButton
                   icon={<Motorbike2Icon height="22px" width="22px" />}
                   title="Klasse A1"
                   isActive={activeTab === "A1"}
                   onClick={() => setActiveTab("A1")}
                   onMouseEnter={() => setHoveredTab("A1")}
                   onMouseLeave={() => setHoveredTab(null)}
-                />
+                /> */}
                 <TabButton
                   icon={<Motorbike2Icon height="22px" width="22px" />}
                   title="Klasse B196"
