@@ -151,15 +151,15 @@ export default function FahrzeugklassenMotorrad() {
                   onMouseLeave={() => setHoveredTab(null)}
                   className="rounded-tr-lg md:rounded-none"
                 />
-                {/*                 <TabButton
+                <TabButton
                   icon={<Motorbike2Icon height="22px" width="22px" />}
                   title="Klasse A1"
                   isActive={activeTab === "A1"}
                   onClick={() => setActiveTab("A1")}
                   onMouseEnter={() => setHoveredTab("A1")}
                   onMouseLeave={() => setHoveredTab(null)}
-                /> */}
-                {/*                 <TabButton
+                />
+                <TabButton
                   icon={<Motorbike2Icon height="22px" width="22px" />}
                   title="Klasse B196"
                   isActive={activeTab === "B196"}
@@ -167,7 +167,7 @@ export default function FahrzeugklassenMotorrad() {
                   onMouseEnter={() => setHoveredTab("B196")}
                   onMouseLeave={() => setHoveredTab(null)}
                   ref={bottomButtonRef}
-                /> */}
+                />
                 <TabButton
                   icon={<MofaIcon height="18px" width="18px" />}
                   title="Klasse AM"
@@ -237,7 +237,7 @@ function Motorbike1Icon({
   );
 }
 
-/* function Motorbike2Icon({
+function Motorbike2Icon({
   fill = "#ffffff",
   height = "200px",
   width = "200px",
@@ -275,7 +275,7 @@ function Motorbike1Icon({
       </g>
     </svg>
   );
-} */
+}
 
 function MofaIcon({ fill = "#ffffff", height = "200px", width = "200px" }) {
   return (
