@@ -23,6 +23,11 @@ const footerLinks = [
     label: "Impressum",
     external: true,
   },
+  {
+    href: "/agb",
+    label: "AGB",
+    external: true,
+  },
 ];
 
 export default function Footer(): JSX.Element {
