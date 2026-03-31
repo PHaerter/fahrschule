@@ -1,7 +1,11 @@
-"'use client'";
+"use client";
 
-import Kontaktformular from "./kontaktformular";
+import dynamic from "next/dynamic";
 import Kontaktdaten from "./kontaktdaten";
+
+const Kontaktformular = dynamic(() => import("./kontaktformular"), {
+  ssr: false,
+});
 
 export default function KontaktSeiteComponent() {
   return (

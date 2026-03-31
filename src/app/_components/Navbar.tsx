@@ -130,7 +130,7 @@ export default function Navbar(): JSX.Element {
               ${
                 isMenuOpen ? "bg-black text-white" : "bg-transparent text-black"
               } 
-              focus:outline-none`}
+              focus:outline-hidden`}
             aria-controls="navbar-sticky"
             aria-expanded={isMenuOpen}
             onClick={toggleMenu}

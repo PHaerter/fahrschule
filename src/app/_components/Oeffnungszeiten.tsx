@@ -75,10 +75,10 @@ export default function Oeffnungszeiten() {
           {standorte.map((standort) => (
             <Card className="bg-white" key={standort.name}>
               <CardHeader>
-                <Link href={standort.mapsLink} passHref={true}>
+                <Link href={standort.mapsLink}>
                   <CardTitle>{standort.name}</CardTitle>
 
-                  <p className="text-sm text-muted-foreground py-2">
+                  <p className="py-2 text-sm text-base-content/70">
                     {standort.adresse}
                   </p>
                 </Link>

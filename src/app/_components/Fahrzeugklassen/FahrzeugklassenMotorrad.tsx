@@ -131,7 +131,7 @@ export default function FahrzeugklassenMotorrad() {
         </h2>
         <Card className="rounded-lg">
           <div className="grid grid-cols-1 md:grid-cols-4 items-start">
-            <div className="w-full flex-shrink-0 relative">
+            <div className="w-full shrink-0 relative">
               <nav className="grid grid-cols-2 md:grid-cols-1 h-full">
                 <TabButton
                   icon={<Motorbike1Icon height="26px" width="26" />}
@@ -175,7 +175,7 @@ export default function FahrzeugklassenMotorrad() {
                   onClick={() => setActiveTab("AM")}
                   onMouseEnter={() => setHoveredTab("AM")}
                   onMouseLeave={() => setHoveredTab(null)}
-                  ref={bottomButtonRef}
+                  buttonRef={bottomButtonRef}
                 />
                 <TabButton
                   icon={<MofaIcon height="18px" width="18px" />}
@@ -185,11 +185,11 @@ export default function FahrzeugklassenMotorrad() {
                   onMouseEnter={() => setHoveredTab("Mofa")}
                   onMouseLeave={() => setHoveredTab(null)}
                   className="md:rounded-bl-lg"
-                  ref={bottomButtonRef}
+                  buttonRef={bottomButtonRef}
                 />
               </nav>
             </div>
-            <div className="col-span-1 md:col-span-3 flex-grow overflow-auto h-full border-l border-t">
+            <div className="col-span-1 md:col-span-3 grow overflow-auto h-full border-l border-t">
               <div className="p-4">
                 <h1 className="text-2xl font-bold text-gray-900 mb-2">
                   {tabContent[hoveredTab || activeTab].title}
@@ -318,7 +318,7 @@ function TabButton({
   onMouseEnter,
   onMouseLeave,
   className = "",
-  ref,
+  buttonRef,
 }: {
   icon: React.ReactElement<React.SVGProps<SVGSVGElement>>;
   title: string;
@@ -327,11 +327,11 @@ function TabButton({
   onMouseEnter: () => void;
   onMouseLeave: () => void;
   className?: string;
-  ref?: React.RefObject<HTMLButtonElement>;
+  buttonRef?: React.Ref<HTMLButtonElement>;
 }) {
   return (
     <button
-      ref={ref}
+      ref={buttonRef}
       onClick={onClick}
       onMouseEnter={() => {
         onMouseEnter();
@@ -343,7 +343,7 @@ function TabButton({
       }}
       className={cn(
         "flex items-start gap-4 p-4 w-full text-left transition-colors",
-        "hover:bg-info focus-visible:bg-info focus-visible:outline-none",
+        "hover:bg-info focus-visible:bg-info focus-visible:outline-hidden",
         "border border-gray-300 md:border-0",
         className,
         isActive && "bg-info text-white hover:bg-info focus-visible:bg-info"

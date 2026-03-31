@@ -1,8 +1,81 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-@plugin "daisyui";
+@import "tailwindcss";
+@config "../../tailwind.config.mjs";
+
+@plugin "daisyui" {
+  themes: false;
+}
+
+@plugin "daisyui/theme" {
+  name: "light";
+  default: true;
+  prefersdark: false;
+  color-scheme: light;
+  --color-primary: #f97316;
+  --color-primary-content: #150900;
+  --color-secondary: #d97706;
+  --color-secondary-content: #110500;
+  --color-accent: #000000;
+  --color-accent-content: #ced9f2;
+  --color-neutral: #f2f2f2;
+  --color-neutral-content: #141415;
+  --color-base-100: #ffffff;
+  --color-base-200: #d3d4d6;
+  --color-base-300: #b4b5b7;
+  --color-base-content: #141415;
+  --color-info: #e62e00;
+  --color-info-content: #d2e2ff;
+  --color-success: #fbbf24;
+  --color-success-content: #150d00;
+  --color-warning: #92400e;
+  --color-warning-content: #ebd8cf;
+  --color-error: #c2410c;
+  --color-error-content: #f7dad1;
+}
+
+@plugin "daisyui/theme" {
+  name: "dark";
+  default: false;
+  prefersdark: true;
+  color-scheme: dark;
+  --color-primary: #f97316;
+  --color-primary-content: #150900;
+  --color-secondary: #d97706;
+  --color-secondary-content: #110500;
+  --color-accent: #1e40af;
+  --color-accent-content: #ced9f2;
+  --color-neutral: #f3f4f6;
+  --color-neutral-content: #141415;
+  --color-base-100: #111827;
+  --color-base-200: #0d1320;
+  --color-base-300: #090f1a;
+  --color-base-content: #c9cbcf;
+  --color-info: #2563eb;
+  --color-info-content: #d2e2ff;
+  --color-success: #fbbf24;
+  --color-success-content: #150d00;
+  --color-warning: #92400e;
+  --color-warning-content: #ebd8cf;
+  --color-error: #c2410c;
+  --color-error-content: #f7dad1;
+}
+
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
 
 :root {
-    --theme: light;
+  --theme: light;
+}
+
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-base-300, currentColor);
   }
+
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+}

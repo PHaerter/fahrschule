@@ -76,7 +76,7 @@ export default function ContactForm() {
       <CardContent className="pb-4">
         <Form {...form}>
           <form
-            className="space-y-4 flex-grow"
+            className="space-y-4 grow"
             onSubmit={form.handleSubmit(onSubmit)}
           >
             {/* First Name and Last Name fields side by side */}
@@ -173,10 +173,12 @@ export default function ContactForm() {
               <p className="text-sm text-gray-500">
                 Wir verwenden Ihre Angaben zur Beantwortung Ihrer Anfrage.
                 Weitere Informationen finden Sie in unseren{" "}
-                <Link href="/datenschutz" passHref legacyBehavior>
-                  <a target="_blank" className="text-blue-500 hover:underline">
-                    Datenschutzhinweisen
-                  </a>
+                <Link
+                  href="/datenschutz"
+                  target="_blank"
+                  className="text-blue-500 hover:underline"
+                >
+                  Datenschutzhinweisen
                 </Link>
                 .
               </p>

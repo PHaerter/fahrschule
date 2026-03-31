@@ -16,7 +16,6 @@ export default function KontaktdatenComponent() {
           <div className="space-y-4">
             <Link
               href="https://www.google.com/maps/place/Fahrschule+Brückelmeier/@53.9029332,9.4774346,17z/data=!3m1!4b1!4m6!3m5!1s0x47b3c4eca9f7b6af:0xe4ac9396eac3048e!8m2!3d53.9029332!4d9.4800095!16s%2Fg%2F12ltlpkhf?entry=ttu&g_ep=EgoyMDI0MTExMS4wIKXMDSoASAFQAw%3D%3D"
-              passHref={true}
             >
               <div className="flex items-start mb-4">
                 <MapPin className="w-5 h-5 mt-3 mr-4 text-neutral-900" />
@@ -29,7 +28,6 @@ export default function KontaktdatenComponent() {
             </Link>
             <Link
               href="https://www.google.com/maps/place/Fahrschule+Brückelmeier/@53.8361574,9.4837878,17z/data=!4m6!3m5!1s0x47b3dba8c2c39145:0xd74072ee7562d74f!8m2!3d53.8361574!4d9.4863627!16s%2Fg%2F1vvyx47z?entry=ttu&g_ep=EgoyMDI0MTExMS4wIKXMDSoASAFQAw%3D%3D"
-              passHref={true}
             >
               <div className="flex items-start">
                 <MapPin className="w-5 h-5 mt-3 mr-4 text-neutral-900" />
